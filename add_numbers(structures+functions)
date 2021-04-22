@@ -1,0 +1,30 @@
+//Add 2 numbers using structure and functions
+#include <stdio.h>
+#include <stdlib.h>
+struct num{
+    int n;
+}; typedef struct num N;
+void accept(N *p){
+    printf("Enter integer value\n");
+    scanf("%d",&(p->n));
+}
+void add(N *first, N *sec,int *sum){
+    *sum= first->n + sec->n;
+}
+void display(N *first, N *sec, int *sum){
+    printf("Sum is:%d + %d= %d",first->n, sec->n, *sum);
+}
+int main(){
+    N *first=0, *sec=0;
+    int *sum=0;
+     //first= (N *)malloc(sizeof(N));
+    accept(first);
+    //sec= (N *)malloc(sizeof(N));
+    accept(sec);
+    sum= (N *)malloc(sizeof(N));
+    add(first, sec, sum);
+    display(first, sec, sum);
+    //free(first); free(sec);
+    return 0;
+    
+}
