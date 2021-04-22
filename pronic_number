@@ -1,0 +1,32 @@
+/******************************************************************************
+Write a progam to check whether a number is a pronic number or not.Use Ternary operator.
+A number is said to be pronic number if it is a product of two consecutive numbers.
+For examples:
+6 = 2 x 3
+72 = 8 x 9
+*******************************************************************************/
+#include <stdio.h>
+int main(){
+    int num, a[100], i=1, j=0,flag;
+    printf("Enter an integer value\n");
+    scanf("%d", &num);
+    while(i<=num){
+        if(num%i==0){
+            //printf("%d\t", i);
+            a[j++]=i;
+        }
+        i++;
+    }
+    printf("\n");
+    for(i=0;i<j;i++,flag=0){
+        if((a[i]+1==a[i+1])&&(a[i]*a[i+1]==num)){
+            flag=1;
+            break;
+        }
+    }
+    if(flag)
+            printf("%d is a pronic number.\n", num);
+        else
+            printf("%d is not a pronic number.\n", num);
+    return 0;
+}
