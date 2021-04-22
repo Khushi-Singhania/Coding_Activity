@@ -1,0 +1,25 @@
+//Program to print even and odd  digits of a given integer 
+#include <stdio.h>
+#include<string.h>
+int main(){
+    int num, p, q, r, odd[50], even[50], j=0, k=0;
+    printf("Enter an integer value\n");
+    scanf("%d", &num);
+    while(num!=0){
+        r=num%10;
+        num=num/10;
+        if(r%2==0)
+            even[j++]=r;
+        else
+            odd[k++]=r;
+     }
+     printf("Even digiits are\n");
+     for(p=j-1;p>=0;p--)
+        printf("%d\t", even[p]);
+    printf("\n");
+     printf("Odd digiits are\n");
+     for(q=k-1;q>=0;q--)
+        printf("%d\t", odd[q]);
+    printf("\n");
+    return 0;
+}
