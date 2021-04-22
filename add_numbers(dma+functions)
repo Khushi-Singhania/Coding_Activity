@@ -1,0 +1,25 @@
+//Add 2 numbers DMA and functions
+#include <stdio.h>
+#include <stdlib.h>
+void accept(int *num){
+    printf("Enter value of the integer\n");
+    scanf("%d", num);
+}
+void add(int n1, int n2, int *sum){
+    *sum= n1+n2;
+}
+void display(int n1, int n2, int sum){
+    printf("Sum is:%d + %d= %d\n", n1, n2, sum);
+}
+int main(){
+    int *num1=0, *num2=0, *sum=0;
+    num1= (int *)malloc(sizeof(int));
+    accept(num1);
+    num2= (int *)malloc(sizeof(int));
+    accept(num2);
+    sum= (int *)malloc(sizeof(int));
+    add(*num1, *num2, sum);
+    display(*num1, *num2, *sum);
+    free(num1);  free(num2);  free(sum); 
+    return 0;
+}
