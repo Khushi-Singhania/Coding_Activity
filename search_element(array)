@@ -1,0 +1,57 @@
+/*********************************************************************************
+Write a C program to  search a specified element in array of random elements.
+If the search  is successful then,  the program should  display the following
+1. Search is successful 
+2. the position of first occurrence
+3. the position of the last occurrence
+
+Example 1
+given array  {11,22,33,33,66,55,88,11,33,11}; and key ==11
+o/p:   
+Search Successfull                                                                                                  
+The first occurrence of the key is = 1                                                                               
+The last occurrence of the key is = 10    
+
+Example 2
+given array   {22,33,33,66,55,88,11,33,11,55}; and key =33
+o/p:
+Search Successfull                                                                                                  
+The first occurrence of the key is = 2                                                                               
+The last occurrence of the key is = 8     
+
+Example 3
+given array   {22,33,33,66,55,88,11,33,11,55}; and key =88
+o/p:
+Search Successfull                                                                                                 
+The first occurrence of the key is = 6                                                                              
+The last occurrence of the key is = 6    
+
+Example 4
+given array   {22,33,33,66,55,88,11,33,11,55}; and key =99
+o/p
+Search Failure  
+***********************************************************************************/
+#include <stdio.h>
+int main(){
+    int arr[100], arr_size, key, i, res[100], j=0, flag=0;
+    printf("Enter the size of the array\n");
+    scanf("%d", &arr_size);
+    printf("Enter array elements\n");
+    for(i=0;i<arr_size;i++)
+        scanf("%d", &arr[i]);
+    printf("Enter the key to be searched\n");
+    scanf("%d",&key);
+    for(i=0;i<arr_size;i++){
+        if(arr[i]==key){
+            res[j++]=i;
+            flag=1;
+        }
+    }
+    if(flag==1){
+        printf("Search successful.\n");
+        printf("The first occurrence of the key is= %d\n", res[0]);
+        printf("The last occurrence of the key is= %d\n", res[j-1]);
+    }
+    else 
+        printf("Search unsuccessful.\n");
+}
